@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
+    <link rel="alternate icon" type="image/png" href="/img/favicon.png">
+    <title>王思腾的博客 | 王思腾，专注AI落地应用</title>
+    
+<link rel="stylesheet" href="/css/reset.css">
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<link rel="stylesheet" href="/css/markdown.css">
+
+    
+<link rel="stylesheet" href="/css/fonts.css">
+
+<meta name="generator" content="Hexo 8.1.2"></head>
+    <body>
+        <div class="paper">
+            <div class="paper-main">
+                
+                    <div class="post-header">
+    <a class="logo" href="/">王思腾的博客</a>
+    <a class="go-home" href="/">
+        <svg width="8" height="14" viewBox="0 0 8 14">
+            <path d="M7 1L1 7l6 6" stroke="#000" stroke-width="2" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </a>
+</div>
+                
+                <div class="post-main">
+
+    
+    
+        <div class="post-main-title">
+            谈谈我对画技术图的思考（一）：我花了很长时间才明白，老板要的不是架构图……
+        </div>
+        <div class="post-meta">
+            2026-09-12
+            
+            <span class="post-author"> · 王思腾</span>
+            
+        </div>
+        
+        <div class="post-cover">
+            <img src="/images/hua-ji-shu-tu-sheng-jing.jpg" alt="谈谈我对画技术图的思考（一）：我花了很长时间才明白，老板要的不是架构图……">
+        </div>
+        
+        <div class="post-md">
+            <p>经常想起这几年的经历，老板经常对着技术方案的文档评论：这个地方补一张大而全让人一眼看懂信息量大的技术架构图。当我画了数个深夜，绘制了一张自以为完整的系统架构图后，老板皱着眉头看了半天，说这个图没有主题、还要改改。有时还会说，这个图没说清楚解决了什么业务问题，或者没说清楚主线逻辑是什么，又或是数据到底怎么跑通的。</p>
+<p>这不仅仅发生在我自己或者身边，而是在很多研发团队里，经常会出现这样尴尬的局面。我曾认为对方忽视技术，不注重工程的严肃性，对计算机学科理论的严谨度不高。而身边画图的高手，能把一张图画得天花乱坠、让人直呼牛掰。在面对复杂的项目汇报、冗长的会议和文档、盘根错节的技术细节，一图胜千言，让老板啧啧称赞。</p>
+<p>直到现在，我才彻底明白：技术人员习惯绘制的、偏“学院派”的「系统架构图」，与决策者或跨部门同事真正需要的「信息结构图」，所面对并试图解决的是两类截然不同的认知问题。在观摩与学习了不少优秀图例之后，我一直在追问：<strong>到底什么样的「架构图」，才是老板真正想要的</strong>？结合最近的阅读、和 AI 对话与思考，我逐渐形成了几个结论。</p>
+<h1 id="一、选图很关键"><a href="#一、选图很关键" class="headerlink" title="一、选图很关键"></a>一、选图很关键</h1><p>这里我给「架构图」加了引号，因为本质上这些图往往并非传统意义上的系统架构图，其中相当一部分更接近信息图。技术专家和架构师在向上汇报、技术深度评审、跨团队协作或技术治理等不同场景下，也会有针对性地选用业务全景图、数据流图、部署拓扑图、技术栈全景图、服务蓝图等图形表达方式，把关键点澄清。</p>
+<p>写技术文档时，<strong>选对一张图、画好一张图，往往比写一大段文字更有效——这对一线研发来说，是一项非常关键的基本功</strong>。但日常工作中，我经常观察到，甚至我自己也常常会出现这几个问题：</p>
+<ul>
+<li>混淆了几种不同性质的图，把各种图杂糅在一起，追求一个大而全（被吐槽不规范）；</li>
+<li>为了像架构图而进行过度设计，比如没有职责隔离的伪分层，过度追求复杂而刻意增加框图连线（被吐槽不真实）；</li>
+<li>选的图不对，在和重业务的汇报场景选用重业务细节的图（被吐槽没有主线逻辑）；</li>
+<li>一张图走天下，给老板看细节满满的交互图（被吐槽没有重点）；</li>
+</ul>
+<p>等等，不胜枚举。很多时候，我们的问题不是怎么绘制，而是不知道应该选择哪种图来绘制。而方向一旦选错，或者根本就没有选方向的话，那最终的结果当然也不让人满意了。<strong>对于一线研发而言，清晰区分这几类“图”的呈现形式，区分出不同的场景下需要绘制哪类图，也算是提升技术影响力与沟通效率的必备工程素养。</strong></p>
+<h1 id="二、如何选图"><a href="#二、如何选图" class="headerlink" title="二、如何选图"></a>二、如何选图</h1><p>选图的本质，是先明确这张图的目的是什么、要传达给读者什么信息。基于这一点，你可以从研发所处阶段来选定，也可以从受众角色来选择。</p>
+<h2 id="1、研发阶段选图"><a href="#1、研发阶段选图" class="headerlink" title="1、研发阶段选图"></a>1、研发阶段选图</h2><table>
+<thead>
+<tr>
+<th>研发阶段</th>
+<th>主要目的&#x2F;关注点</th>
+<th>推荐图类型</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>项目立项 &#x2F; 需求分析</td>
+<td>对齐业务逻辑与端到端体验</td>
+<td>业务架构图 &#x2F; 服务蓝图</td>
+</tr>
+<tr>
+<td>技术选型与规划</td>
+<td>不重复造轮子、选型合规</td>
+<td>系统全景图 &#x2F; 技术栈雷达</td>
+</tr>
+<tr>
+<td>架构设计与评审</td>
+<td>明确模块抽象、模块关系与数据加工链条</td>
+<td>系统架构图 &#x2F; C4 架构图 &#x2F; 数据流图</td>
+</tr>
+<tr>
+<td>上线部署与压测</td>
+<td>明确 VPC 网段、网络隔离、高可用与容灾</td>
+<td>部署网络拓扑图</td>
+</tr>
+<tr>
+<td>成果汇报 &#x2F; 技术宣讲</td>
+<td>展示系统交付的技术价值</td>
+<td>业务&#x2F;能力信息图</td>
+</tr>
+</tbody></table>
+<h2 id="2、受众角色"><a href="#2、受众角色" class="headerlink" title="2、受众角色"></a>2、受众角色</h2><table>
+<thead>
+<tr>
+<th>受众角色</th>
+<th>他们关心什么</th>
+<th>推荐图类型</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>决策层（老板 &#x2F; 业务 VP &#x2F; 跨部门负责人）</td>
+<td>系统提供什么能力；输入&#x2F;输出与业务价值</td>
+<td>业务&#x2F;能力信息图 或 业务架构图</td>
+</tr>
+<tr>
+<td>技术高管 &#x2F; 首席架构师（CTO &#x2F; 架构委员会）</td>
+<td>全局有哪些系统；是否重复造轮子；选型是否标准化</td>
+<td>系统全景图 或 技术栈全景图</td>
+</tr>
+<tr>
+<td>一线研发 &#x2F; 代码实现者</td>
+<td>微服务边界；组件依赖；API 协议与接口时序等</td>
+<td>C4 架构图（L2&#x2F;L3）或 服务蓝图</td>
+</tr>
+<tr>
+<td>SRE &#x2F; 运维 &#x2F; 安全审计</td>
+<td>VPC 边界；网络 CIDR；高可用节点与故障漂移路径</td>
+<td>部署与网络拓扑图</td>
+</tr>
+<tr>
+<td>数据团队 &#x2F; DBA</td>
+<td>数据加工链条与血缘；数据安全级别</td>
+<td>数据流&#x2F;血缘图</td>
+</tr>
+</tbody></table>
+<h2 id="3、最简原则"><a href="#3、最简原则" class="headerlink" title="3、最简原则"></a>3、最简原则</h2><p>如果只选一张图，往往是信息图、系统全景图、系统架构图进行三选一。最简易的选择原则如下：</p>
+<table>
+<thead>
+<tr>
+<th>场景</th>
+<th>你要说清楚什么</th>
+<th>选哪类图</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>向上汇报 &#x2F; 跨部门对齐</td>
+<td>用业务语言讲清「输入是什么 → 经过什么能力加工 → 输出什么价值」</td>
+<td>信息图</td>
+</tr>
+<tr>
+<td>技术规划 &#x2F; 跨团队协作 &#x2F; 新人 Onboarding</td>
+<td>系统在公司&#x2F;业务线的位置；上下游依赖关系</td>
+<td>系统全景图</td>
+</tr>
+<tr>
+<td>技术评审 &#x2F; 编码实现 &#x2F; 运维排障</td>
+<td>Context &#x2F; Container &#x2F; Component 分层；用技术语言指导实现与部署</td>
+<td>系统架构图（C4 模型）</td>
+</tr>
+</tbody></table>
+<p>可以看到，<strong>老板需要的是信息图或者系统全景图，而非传统意义上的系统架构图</strong>。</p>
+<hr>
+<p>下一篇，我想和你谈谈怎么画技术图。</p>
+
+        </div>
+        
+        
+        <div class="post-copyright">
+            本文为原创内容，转载请联系作者并注明来源
+        </div>
+        
+
+    
+
+</div>
+                <div class="footer">
+    <span>Copyright © 2022 王思腾的博客</span>
+    <span>Theme Designed By <a target="_blank" href="https://zheli.design/one-paper">這李設計</a></span>
+</div>
+
+
+<link rel="stylesheet" href="/css/a11y-dark.min.css">
+
+
+<script src="/js/highlight.min.js"></script>
+
+
+<script src="/js/highlightjs-line-numbers.js"></script>
+
+
+<script>
+    hljs.initHighlightingOnLoad();
+    hljs.initLineNumbersOnLoad();
+</script>
+
+            </div>
+        </div>
+    </body>
+</html>
